@@ -3,6 +3,7 @@ package students.jimmy.publisher.factory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import students.jimmy.publisher.fragment_articles.ArticlesViewModel
+import students.jimmy.publisher.fragment_publish.PublisherViewModel
 
 class GeneralViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -10,6 +11,8 @@ class GeneralViewModelFactory : ViewModelProvider.Factory {
             when {
                 isAssignableFrom(ArticlesViewModel::class.java) ->
                     ArticlesViewModel()
+                isAssignableFrom(PublisherViewModel::class.java) ->
+                    PublisherViewModel()
                 else -> {
                     throw ClassNotFoundException("No Class is found in Factory")
                 }

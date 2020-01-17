@@ -28,6 +28,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/outterMargin"
-            android:layout_marginEnd="@dimen/outterMargin"/>
+            android:layout_marginEnd="@dimen/outterMargin"
+            android:onClick="@{() -> viewModel.navigateToCreateArticle()}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

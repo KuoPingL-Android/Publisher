@@ -3,4 +3,10 @@
     <string name="hint_title">TITLE</string>
     <string name="hint_tag">TAG</string>
     <string name="hint_content">Content</string>
+    <string name="text_button_publish">PUBLISH</string>
+    <string name="error_titlemissing">Please Input Proper Title</string>
+    <string name="error_tagmission">Please add a tag to the article for clarity</string>
+    <string name="warning_discarddrafe">Discard draft?</string>
+    <string name="button_discard">Discard</string>
+    <string name="button_cancel">Cancel</string>
 </resources>

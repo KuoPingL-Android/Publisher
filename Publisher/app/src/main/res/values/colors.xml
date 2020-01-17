@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="main_purple">#a163c0</color>
     <color name="main_lightgrey">#d5d4d2</color>
+    <color name="translucent_40">#8000</color>
 </resources>

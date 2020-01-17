@@ -1,44 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_publisher">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:layout_marginStart="@dimen/outterMargin"
-        android:layout_marginEnd="@dimen/outterMargin"
-        android:layout_marginTop="@dimen/outterMargin"
-        android:layout_marginBottom="@dimen/innerMargin"
-        android:hint="@string/hint_title"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:layout_marginStart="@dimen/outterMargin"
-        android:layout_marginEnd="@dimen/outterMargin"
-        android:layout_marginTop="@dimen/innerMargin"
-        android:hint="@string/hint_tag"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.7"
-        android:layout_marginStart="@dimen/outterMargin"
-        android:layout_marginEnd="@dimen/outterMargin"
-        android:layout_marginTop="@dimen/innerMargin"
-        android:background="@drawable/bg_edit_content"
-        android:hint="@string/hint_content"
-        android:gravity="top"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:layout_marginTop="@dimen/innerMargin"
-        android:layout_marginStart="@dimen/outterMargin"
-        android:layout_marginEnd="@dimen/outterMargin"
-        android:layout_marginBottom="@dimen/outterMargin"
-        android:background="@drawable/bg_edit_content"/>
+    <data>
+        <variable
+            name="viewModel"
+            type="students.jimmy.publisher.fragment_publish.PublisherViewModel" />
+    </data>
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:clickable="true"
+        android:onClick="@{() -> viewModel.closeDialog()}">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_publisher"
+            android:layout_marginStart="@dimen/outterMargin"
+            android:layout_marginEnd="@dimen/outterMargin"
+            >
+            <EditText
+                android:id="@+id/edit_publish_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginStart="@dimen/outterMargin"
+                android:layout_marginEnd="@dimen/outterMargin"
+                android:layout_marginTop="@dimen/outterMargin"
+                android:layout_marginBottom="@dimen/innerMargin"
+                android:hint="@string/hint_title"
+                android:text="@={viewModel.title}"/>
+
+            <EditText
+                android:id="@+id/edit_publish_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginStart="@dimen/outterMargin"
+                android:layout_marginEnd="@dimen/outterMargin"
+                android:layout_marginTop="@dimen/innerMargin"
+                android:hint="@string/hint_tag"
+                android:text="@={viewModel.tag}"/>
+
+            <EditText
+                android:id="@+id/edit_publish_content"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="@dimen/outterMargin"
+                android:layout_marginEnd="@dimen/outterMargin"
+                android:layout_marginTop="@dimen/innerMargin"
+                android:background="@drawable/bg_edit_content"
+                android:hint="@string/hint_content"
+                android:gravity="top"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@={viewModel.content}"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/innerMargin"
+                android:layout_marginStart="@dimen/outterMargin"
+                android:layout_marginEnd="@dimen/outterMargin"
+                android:layout_marginBottom="@dimen/outterMargin"
+                android:background="@drawable/bg_button_publish"
+                android:text="@string/text_button_publish"
+                android:enabled="@{viewModel.isArticlePrepared}"
+                android:onClick="@{() -> viewModel.addData()}"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

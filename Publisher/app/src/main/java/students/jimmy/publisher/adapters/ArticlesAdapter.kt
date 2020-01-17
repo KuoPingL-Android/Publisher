@@ -12,8 +12,7 @@ class ArticlesAdapter: ListAdapter<Article, ArticlesAdapter.ArticleViewHolder>(A
 
     companion object ArticleCallback: DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
-            return (oldItem.author.authorID == newItem.author.authorID
-                    && oldItem.articleID == newItem.articleID)
+            return oldItem.createdTime == newItem.createdTime
         }
 
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -22,7 +21,7 @@ class ArticlesAdapter: ListAdapter<Article, ArticlesAdapter.ArticleViewHolder>(A
 
     }
 
-    class ArticleViewHolder(val binding: ItemArticleBinding):RecyclerView.ViewHolder(binding.root) {
+    class ArticleViewHolder(private val binding: ItemArticleBinding):RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {
             binding.article = article
             binding.executePendingBindings()
@@ -36,6 +35,7 @@ class ArticlesAdapter: ListAdapter<Article, ArticlesAdapter.ArticleViewHolder>(A
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
+
 
 
 }

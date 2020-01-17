@@ -36,7 +36,7 @@ class ArticlesViewModel : ViewModel() {
         _navigateToEditor.value = null
     }
 
-    fun startsListeningToData() {
+    private fun startsListeningToData() {
         DataSource.articlesCollection.orderBy("createdTime", Query.Direction.DESCENDING).addSnapshotListener { snapshot, exception ->
 
             if (exception != null) {
