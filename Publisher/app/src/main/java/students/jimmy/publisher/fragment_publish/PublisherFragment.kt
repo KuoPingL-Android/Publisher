@@ -75,11 +75,14 @@ class PublisherFragment : AppCompatDialogFragment() {
         return binding.root
     }
 
+
+    // Wish to implement TextChanged in tag editText, such that
+    // I can create Tag View when space is pressed.
     private fun setupBinding() {
         binding.editPublishTag.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                 if (s?.trim()?.isEmpty() == true) {
-                    
+
                 }
             }
 

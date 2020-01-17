@@ -46,6 +46,7 @@
                 android:layout_marginEnd="@dimen/outterMargin"
                 android:layout_marginTop="@dimen/innerMargin"
                 android:hint="@string/hint_tag"
+                android:maxLength="15"
                 android:text="@={viewModel.tag}"/>
 
             <EditText
