@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_publisher">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginStart="@dimen/outterMargin"
+        android:layout_marginEnd="@dimen/outterMargin"
+        android:layout_marginTop="@dimen/outterMargin"
+        android:layout_marginBottom="@dimen/innerMargin"
+        android:hint="@string/hint_title"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginStart="@dimen/outterMargin"
+        android:layout_marginEnd="@dimen/outterMargin"
+        android:layout_marginTop="@dimen/innerMargin"
+        android:hint="@string/hint_tag"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:layout_marginStart="@dimen/outterMargin"
+        android:layout_marginEnd="@dimen/outterMargin"
+        android:layout_marginTop="@dimen/innerMargin"
+        android:background="@drawable/bg_edit_content"
+        android:hint="@string/hint_content"
+        android:gravity="top"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginTop="@dimen/innerMargin"
+        android:layout_marginStart="@dimen/outterMargin"
+        android:layout_marginEnd="@dimen/outterMargin"
+        android:layout_marginBottom="@dimen/outterMargin"
+        android:background="@drawable/bg_edit_content"/>
+
+</LinearLayout>
